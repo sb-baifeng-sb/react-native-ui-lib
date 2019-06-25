@@ -35,8 +35,8 @@ export default class HintsScreen extends Component {
     } = this.state;
     const targetFrame = {x: 140, y: 100, width: 10, height: 10};
     const message = useShortMessage
-      ? 'Add other cool and useful stuff.'
-      : 'Add other cool and useful stuff through adding apps to your visitors to enjoy.';
+      ? 'Customize the about tab'
+      : 'Customize the about tab';
 
     return (
       <View flex>

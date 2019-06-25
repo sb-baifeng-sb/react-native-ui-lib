@@ -219,10 +219,13 @@ class Hint extends BaseComponent {
   getHintPadding() {
     const paddings = {paddingVertical: this.hintOffset, paddingHorizontal: this.edgeMargins};
     if (this.useSideTip) {
+      console.warn  ('aasda')
       const targetPositionOnScreen = this.getTargetPositionOnScreen();
       if (targetPositionOnScreen === TARGET_POSITIONS.LEFT) {
+        console.warn('b')
         paddings.paddingLeft = this.targetLayout.x;
       } else if (targetPositionOnScreen === TARGET_POSITIONS.RIGHT) {
+        console.warn('c')
         paddings.paddingRight = Constants.screenWidth - this.targetLayout.x - this.targetLayout.width;
       }
     }
@@ -399,21 +402,30 @@ const styles = StyleSheet.create({
   hintContainer: {
     position: 'absolute',
     width: Constants.screenWidth,
+    borderWidth: 1,
+    borderColor: 'green'
   },
   hintTip: {
     position: 'absolute',
   },
   hint: {
-    backgroundColor: DEFAULT_COLOR,
+    backgroundColor: 'green',
     paddingHorizontal: Spacings.s5,
     paddingTop: Spacings.s3,
     paddingBottom: Spacings.s4,
     borderRadius: BorderRadiuses.br60,
+    flexShrink: 1,
+    // alignSelf: 'flex-end',
+
+    borderWidth: 1,
+    minWidth: '100%',
   },
   hintMessage: {
     ...Typography.text70,
     color: Colors.white,
+    // flexGrow: 1,
     flexShrink: 1,
+    backgroundColor: 'red'
   },
   icon: {
     marginRight: Spacings.s4,
